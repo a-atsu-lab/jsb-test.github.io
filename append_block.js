@@ -10,7 +10,7 @@ Blockly.Blocks['foradd'] = {
             .setCheck("Number")
             .appendField(";")
             .appendField(new Blockly.FieldVariable("i"), "NAME")
-            .appendField(new Blockly.FieldDropdown([["==","=="], ["!=","!="], ["<","<"], ["<=","<="], [">",">"], [">=",">="]]), "logi");
+            .appendField(new Blockly.FieldDropdown([["<","<"], ["<=","<="], [">",">"], [">=",">="]]), "logi");
         this.appendDummyInput()
             .appendField(";")
             .appendField(new Blockly.FieldVariable("i"), "var2")
@@ -23,7 +23,7 @@ Blockly.Blocks['foradd'] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(120);
-        this.setTooltip("for(初期化式; 条件式; 変化式)　条件を満たしている間くり返す。");
+        this.setTooltip("for(初期化式; 条件式; 変化式)　条件式を満たしている間くり返す。変化式「i++」は1ループごとにiを1増やすの意味。");
         this.setHelpUrl("");
     }
 };
@@ -32,18 +32,18 @@ Blockly.Blocks['forsub'] = {
     init: function() {
         this.appendDummyInput()
             .appendField("for (")
-            .appendField(new Blockly.FieldVariable("j"), "var1")
+            .appendField(new Blockly.FieldVariable("i"), "var1")
             .appendField("=");
         this.appendValueInput("forSubIni")
             .setCheck("Number");
         this.appendValueInput("forSubBool")
             .setCheck("Number")
             .appendField(";")
-            .appendField(new Blockly.FieldVariable("j"), "NAME")
-            .appendField(new Blockly.FieldDropdown([["==","=="], ["!=","!="], ["<","<"], ["<=","<="], [">",">"], [">=",">="]]), "logi");
+            .appendField(new Blockly.FieldVariable("i"), "NAME")
+            .appendField(new Blockly.FieldDropdown([["<","<"], ["<=","<="], [">",">"], [">=",">="]]), "logi");
         this.appendDummyInput()
             .appendField(";")
-            .appendField(new Blockly.FieldVariable("j"), "var2")
+            .appendField(new Blockly.FieldVariable("i"), "var2")
             .appendField("--){");
         this.appendStatementInput("forSubState")
             .setCheck(null);
@@ -53,7 +53,7 @@ Blockly.Blocks['forsub'] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(120);
-        this.setTooltip("for(初期化式; 条件式; 変化式)　条件を満たしている間くり返す。");
+        this.setTooltip("for(初期化式; 条件式; 変化式)　条件式を満たしている間くり返す。変化式「i--」は1ループごとにiを1減らすの意味。");
         this.setHelpUrl("");
     }
   };
@@ -155,9 +155,85 @@ Blockly.Blocks['forsub'] = {
           .setCheck(["Number", "String"])
           .appendField(new Blockly.FieldDropdown([["&&","&&"], ["||","||"]]), "bool2");
       this.setInputsInline(true);
-      this.setOutput(true, ["Number", "String"]);
+      this.setOutput(true, "Boolean");
       this.setColour(210);
    this.setTooltip("&& 論理積（かつ、and），|| 論理和（または、or）");
+   this.setHelpUrl("");
+    }
+  };
+
+
+//////////////////////////////////////////////////////
+
+  Blockly.Blocks['consoleap'] = {
+    init: function() {
+      this.appendValueInput("consoletxt")
+          .setCheck(null)
+          .appendField("console.log(");
+      this.appendDummyInput()
+          .appendField(");");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(160);
+   this.setTooltip("文字列や数値を出力する");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['textap'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("'")
+          .appendField(new Blockly.FieldTextInput("文字列を入力"), "textapin")
+          .appendField("'");
+      this.setOutput(true, ["String", "Number", "Array"]);
+      this.setColour(160);
+   this.setTooltip("文字列");
+   this.setHelpUrl("");
+    }
+  };
+
+  //変数に代入
+  Blockly.Blocks['varap'] = {
+    init: function() {
+      this.appendValueInput("varapin")
+          .setCheck(null)
+          .appendField(new Blockly.FieldVariable("item"), "var1")
+          .appendField("=");
+      this.appendDummyInput()
+          .appendField(";");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(330);
+   this.setTooltip("変数に代入する");
+   this.setHelpUrl("");
+    }
+  };
+
+// 変数宣言
+  Blockly.Blocks['set_varap'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("var ")
+          .appendField(new Blockly.FieldVariable("item"), "var1")
+          .appendField(";");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(330);
+   this.setTooltip("変数を宣言する");
+   this.setHelpUrl("");
+    }
+  };
+
+  //変数
+  Blockly.Blocks['var_ap'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldVariable("item"), "var1");
+      this.setOutput(true, null);
+      this.setColour(330);
+   this.setTooltip("変数");
    this.setHelpUrl("");
     }
   };
