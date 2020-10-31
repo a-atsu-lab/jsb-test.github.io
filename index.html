@@ -20,21 +20,16 @@
 <!-- 表示する block について -->
  <xml id="toolbox">
   <category name="テキスト" colour="160">
-    <block type="text_print">
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT">abc</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="text"></block>
-    <block type="text_length">
+    <block type="text_print"></block>
+<!--    <block type="consoleap"></block>-->
+    <block type="textap"></block>
+<!--    <block type="text_length">
       <value name="VALUE">
         <shadow type="text">
           <field name="TEXT">abc</field>
         </shadow>
       </value>
-    </block>
+    </block>-->
   </category>
 
   <category name="条件・論理" colour="210">
@@ -42,7 +37,7 @@
     <block type="elifap"></block>
     <block type="elseap"></block>
     <block type="boolap"></block>
-    <!-- <block type="boolap2"></block> -->
+    <block type="boolap2"></block>
     <block type="logic_negate"></block>
   </category>
 
@@ -74,7 +69,7 @@
           <field name="NUM">9</field>
         </shadow>
       </value>
-    </block>    
+    </block>
     <block type="math_random_int">
       <value name="FROM">
         <shadow type="math_number">
@@ -91,20 +86,22 @@
   </category>
 
   <sep></sep>
-  <category name="変数" colour="330" custom="VARIABLE"></category>
+  <category name="変数" colour="330">
+    <block type="set_varap"></block>
+    <block type="varap"></block>
+    <block type="var_ap"></block>
+  </category>
+  <!-- <category name="変数" colour="330" custom="VARIABLE">  </category> -->
 </xml>
 
 <!-- 初期状態 -->
 <xml id="startBlocks">
   <block type="text_print" id="txpre" x="35" y="21">
-    <value name="TEXT">
-      <shadow type="text" id="texsha">
-        <field name="TEXT">Hello, World</field>
-      </shadow>
+    <value name="VALUE">
+      <block type="textap" id="texsha"></block>
     </value>
   </block>
 </xml>
-
 
 <!-- JSの記述 -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/blockly@1.0.0/blockly_compressed.min.js"></script> -->
