@@ -62,7 +62,7 @@ Blockly.JavaScript['calcap'] = function(block) {
   var dropdown_calc = block.getFieldValue('calc');
   var value_var2 = Blockly.JavaScript.valueToCode(block, 'var2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = value_var1 + dropdown_calc + value_var2;;
+  var code = value_var1 + dropdown_calc + value_var2;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -73,6 +73,52 @@ Blockly.JavaScript['boolap2'] = function(block) {
   var value_var2 = Blockly.JavaScript.valueToCode(block, 'var2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = value_var1 + ' ' + dropdown_bool2 + ' ' + value_var2;;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+
+
+///////////////////////////////////////////////////////////////////
+Blockly.JavaScript['consoleap'] = function(block) {
+  //var value_consoletxt = Blockly.JavaScript.valueToCode(block, 'consoletxt', Blockly.JavaScript.ORDER_NONE);
+  var value_consoletxt = Blockly.JavaScript.valueToCode(block, 'consoletxt', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'console.log(' + value_consoletxt + ');\n';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['textap'] = function(block) {
+  var text_textapin = block.getFieldValue('textapin');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\'' + text_textapin + '\'';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+//変数に代入
+Blockly.JavaScript['varap'] = function(block) {
+  var variable_var1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('var1'), Blockly.Variables.NAME_TYPE);
+  var value_varapin = Blockly.JavaScript.valueToCode(block, 'varapin', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = variable_var1 + ' = ' + value_varapin + ';\n';
+  return code;
+};
+
+
+//変数宣言
+Blockly.JavaScript['set_varap'] = function(block) {
+  var variable_var1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('var1'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'var ' + variable_var1 + ';\n';
+  return code;
+};
+
+//変数の値
+Blockly.JavaScript['var_ap'] = function(block) {
+  var variable_var1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('var1'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble JavaScript into code variable.
+  var code = variable_var1;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
