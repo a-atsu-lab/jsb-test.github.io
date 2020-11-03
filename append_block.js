@@ -95,7 +95,7 @@ Blockly.Blocks['forsub'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(210);
-   this.setTooltip("else if ( 条件式 ){ 処理 }　これまでの if 文の条件は満たさないが、この条件は満たすとき、処理を実行する。");
+   this.setTooltip("else if ( 条件式 ){ 処理 }　これまでの if 文の条件は満たさないが、この条件は満たすとき処理を実行する。");
    this.setHelpUrl("");
     }
   };
