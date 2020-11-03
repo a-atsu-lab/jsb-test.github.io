@@ -23,7 +23,7 @@ Blockly.Blocks['foradd'] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(120);
-        this.setTooltip("for(初期化式; 条件式; 変化式)　条件式を満たしている間くり返す。変化式「i++」は1ループごとにiを1増やすの意味。");
+        this.setTooltip("for(初期化式; 条件式; 変化式)　条件式を満たしている間くり返す。変化式「++」は1ループごとに1増やすの意味。");
         this.setHelpUrl("");
     }
 };
@@ -53,7 +53,7 @@ Blockly.Blocks['forsub'] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(120);
-        this.setTooltip("for(初期化式; 条件式; 変化式)　条件式を満たしている間くり返す。変化式「i--」は1ループごとにiを1減らすの意味。");
+        this.setTooltip("for(初期化式; 条件式; 変化式)　条件式を満たしている間くり返す。変化式「--」は1ループごとに1減らすの意味。");
         this.setHelpUrl("");
     }
   };
