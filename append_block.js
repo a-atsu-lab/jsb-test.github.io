@@ -2,18 +2,18 @@ Blockly.Blocks['foradd'] = {
     init: function() {
         this.appendDummyInput()
             .appendField("for (")
-            .appendField(new Blockly.FieldVariable("i"), "var1")
+            .appendField(new Blockly.FieldVariable("item"), "var1")
             .appendField("=");
         this.appendValueInput("forAddIni")
             .setCheck("Number");
         this.appendValueInput("forAddNum")
             .setCheck("Number")
             .appendField(";")
-            .appendField(new Blockly.FieldVariable("i"), "NAME")
+            .appendField(new Blockly.FieldVariable("item"), "NAME")
             .appendField(new Blockly.FieldDropdown([["<","<"], ["<=","<="], [">",">"], [">=",">="]]), "logi");
         this.appendDummyInput()
             .appendField(";")
-            .appendField(new Blockly.FieldVariable("i"), "var2")
+            .appendField(new Blockly.FieldVariable("item"), "var2")
             .appendField("++){");
         this.appendStatementInput("forAddState")
             .setCheck(null);
@@ -32,18 +32,18 @@ Blockly.Blocks['forsub'] = {
     init: function() {
         this.appendDummyInput()
             .appendField("for (")
-            .appendField(new Blockly.FieldVariable("i"), "var1")
+            .appendField(new Blockly.FieldVariable("item"), "var1")
             .appendField("=");
         this.appendValueInput("forSubIni")
             .setCheck("Number");
         this.appendValueInput("forSubBool")
             .setCheck("Number")
             .appendField(";")
-            .appendField(new Blockly.FieldVariable("i"), "NAME")
+            .appendField(new Blockly.FieldVariable("item"), "NAME")
             .appendField(new Blockly.FieldDropdown([["<","<"], ["<=","<="], [">",">"], [">=",">="]]), "logi");
         this.appendDummyInput()
             .appendField(";")
-            .appendField(new Blockly.FieldVariable("i"), "var2")
+            .appendField(new Blockly.FieldVariable("item"), "var2")
             .appendField("--){");
         this.appendStatementInput("forSubState")
             .setCheck(null);
