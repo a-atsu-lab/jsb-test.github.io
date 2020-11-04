@@ -74,7 +74,7 @@ Blockly.Blocks['forsub'] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(210);
-        this.setTooltip("if ( 条件式 ){ 処理 }　条件を満たしたとき、処理を実行する。");
+        this.setTooltip("if ( 条件式 ){ 処理 }　条件式を満たしたとき、処理を実行する。");
         this.setHelpUrl("");
     }
   };
@@ -95,7 +95,7 @@ Blockly.Blocks['forsub'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(210);
-   this.setTooltip("else if ( 条件式 ){ 処理 }　これまでの if 文の条件は満たさないが、この条件は満たすとき処理を実行する。");
+   this.setTooltip("else if ( 条件式 ){ 処理 }　これまでの if 文の条件式は満たさないが、この条件式は満たすとき処理を実行する。");
    this.setHelpUrl("");
     }
   };
@@ -112,7 +112,7 @@ Blockly.Blocks['forsub'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(210);
-   this.setTooltip("else { 処理 }　どの if 文の条件も満たさないとき、処理を実行する。");
+   this.setTooltip("else { 処理 }　どの if 文の条件式も満たさないとき、処理を実行する。");
    this.setHelpUrl("");
     }
   };
