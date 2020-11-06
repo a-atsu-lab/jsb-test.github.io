@@ -132,6 +132,21 @@ Blockly.Blocks['forsub'] = {
     }
   };
 
+  Blockly.Blocks['boolap2'] = {
+    init: function() {
+      this.appendValueInput("var1")
+          .setCheck(["Number", "String", "Boolean"]);
+      this.appendValueInput("var2")
+          .setCheck(["Number", "String", "Boolean"])
+          .appendField(new Blockly.FieldDropdown([["&&","&&"], ["||","||"]]), "bool2");
+      this.setInputsInline(true);
+      this.setOutput(true, "Boolean");
+      this.setColour(210);
+   this.setTooltip("&& 論理積（かつ、and），|| 論理和（または、or）");
+   this.setHelpUrl("");
+    }
+  };
+
   Blockly.Blocks['calcap'] = {
     init: function() {
       this.appendValueInput("var1")
@@ -146,22 +161,6 @@ Blockly.Blocks['forsub'] = {
    this.setHelpUrl("");
     }
   };
-
-  Blockly.Blocks['boolap2'] = {
-    init: function() {
-      this.appendValueInput("var1")
-          .setCheck(["Number", "String"]);
-      this.appendValueInput("var2")
-          .setCheck(["Number", "String"])
-          .appendField(new Blockly.FieldDropdown([["&&","&&"], ["||","||"]]), "bool2");
-      this.setInputsInline(true);
-      this.setOutput(true, "Boolean");
-      this.setColour(210);
-   this.setTooltip("&& 論理積（かつ、and），|| 論理和（または、or）");
-   this.setHelpUrl("");
-    }
-  };
-
 
 //////////////////////////////////////////////////////
 
